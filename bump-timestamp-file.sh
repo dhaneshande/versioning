@@ -11,6 +11,10 @@ echo $(date) > bumpme
 git config --global user.email "dande@miraclesoft.com"
 git config --global user.name "dhaneshande"
 
+pwd
+
+ls -R
+
 PACKAGE_VERSION=$(cat package.json \
   | grep version \
   | head -1 \
