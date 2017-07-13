@@ -19,6 +19,7 @@ run:
       chmod +x resource-tutorial/bump-timestamp-file.sh
       pwd
       ls -R
+      cd resource-tutorial
       PACKAGE_VERSION=$(cat package.json \
       | grep version \
       | head -1 \
