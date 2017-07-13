@@ -21,3 +21,12 @@ run:
       ls -l
       set -o pipefail
       chmod +x resource-tutorial/bump-timestamp-file.sh
+      pwd
+      ls -R
+      PACKAGE_VERSION=$(cat package.json \
+      | grep version \
+      | head -1 \
+      | awk -F: '{ print $2 }' \
+      | sed 's/[",]//g' \
+      | tr -d '[[:space:]]')
+      echo $ PACKAGE_VERSION
