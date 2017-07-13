@@ -7,10 +7,6 @@ image_resource:
 
 inputs:
   - name: resource-tutorial
-  - name: resource-gist
-
-outputs:
-  - name: updated-gist
 
 run:
   path: bash
