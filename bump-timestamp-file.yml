@@ -19,11 +19,4 @@ run:
       chmod +x resource-tutorial/bump-timestamp-file.sh
       pwd
       ls -R
-      cd resource-tutorial
-      PACKAGE_VERSION=$(cat package.json \
-      | grep version \
-      | head -1 \
-      | awk -F: '{ print $2 }' \
-      | sed 's/[",]//g' \
-      | tr -d '[[:space:]]')
-      echo $ PACKAGE_VERSION
+      ../resource-tutorial/bump-timestamp-file.sh
