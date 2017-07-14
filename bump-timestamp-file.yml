@@ -18,16 +18,4 @@ run:
       pwd
       ls -R
       cd resource-tutorial
-      cat package.json
       awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json
-      PACKAGE_VERSION=$(cat package.json \
-      | grep version \
-      | head -1 \
-      | awk -F: '{ print $2 }' \
-      | sed 's/[",]//g' \
-      | tr -d '[[:space:]]')
-      echo $ PACKAGE_VERSION
-      git tag $PACKAGE_VERSION
-      git push --tags
-      git config --global user.email "dande@miraclesoft.com"
-      git config --global user.name "dhaneshande"
