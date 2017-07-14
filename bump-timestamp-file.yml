@@ -17,6 +17,7 @@ run:
       ls -l
       pwd
       ls -R
+      cd resource-tutorial
       PACKAGE_VERSION=$(cat package.json \
       | grep version \
       | head -1 \
