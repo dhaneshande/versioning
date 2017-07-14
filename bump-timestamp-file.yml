@@ -25,7 +25,7 @@ run:
       | sed 's/[",]//g' \
       | tr -d '[[:space:]]')
       echo $ PACKAGE_VERSION
+      git tag $PACKAGE_VERSION
       git config --global user.email "dande@miraclesoft.com"
       git config --global user.name "dhaneshande"
-      git tag $PACKAGE_VERSION
       git push --tags
