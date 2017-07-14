@@ -19,6 +19,7 @@ run:
       ls -R
       cd resource-tutorial
       cat package.json
+      awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json
       PACKAGE_VERSION=$(cat package.json \
       | grep version \
       | head -1 \
