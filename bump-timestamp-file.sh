@@ -1,26 +1,22 @@
-#!/bin/sh
+---
+platform: linux
 
-set -e # fail fast
-set -x # print commands
+image_resource:
+  type: docker-image
+  source: { repository: concourse/bosh-cli }
 
+inputs:
+  - name: resource-tutorial
 
-git config --global user.email "dande@miraclesoft.com"
-git config --global user.name "dhaneshande"
-
-pwd
-
-ls -R
-
-PACKAGE_VERSION=$(cat package.json \
-  | grep version \
-  | head -1 \
-  | awk -F: '{ print $2 }' \
-  | sed 's/[",]//g' \
-  | tr -d '[[:space:]]')
-  
-echo $ PACKAGE_VERSION
-
-git tag $PACKAGE_VERSION
-git push --tags
-
-
+run:
+  path: bash
+  args:
+    - -e
+    - -c
+    - |
+      ls -l
+      pwd
+      ls -R
+      cd resource-tutorial
+      PACKAGE_VERSION=$(awk '/version/{gsub(/("|",)/,"",$2);print $2};' package.json)
+      echo $PACKAGE_VERSION
