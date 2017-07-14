@@ -6,8 +6,9 @@ resources:
     uri: https://github.com/dhaneshande/versioning.git
 
 jobs:
-- name: job-bump-date
+- name: job-get-version
   serial: true
+  trigger: true
   plan:
   - get: resource-tutorial
   - task: bump-timestamp-file
