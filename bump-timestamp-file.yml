@@ -19,4 +19,4 @@ run:
       chmod +x resource-tutorial/bump-timestamp-file.sh
       pwd
       ls -R
-      ../resource-tutorial/bump-timestamp-file.sh
+      ../bump-timestamp-file.sh
