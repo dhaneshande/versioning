@@ -8,8 +8,8 @@ resources:
 jobs:
 - name: job-get-version
   serial: true
-  trigger: true
   plan:
   - get: resource-tutorial
+    trigger: true
   - task: bump-timestamp-file
     file: resource-tutorial/bump-timestamp-file.yml
